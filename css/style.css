@@ -1,0 +1,20 @@
+/*
+* phone -- below 600px
+* tablet-port -- 600 - 900px
+* tablet-land -- 900 - 1200px
+* desktop -- 1200 - 1800px
+* big screen -- 1800 and above
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font: 10px/1.5px 'Lato', sans-serif; }
+
+@media only screen and (min-width: 75em) {
+  body {
+    margin: 3rem; } }

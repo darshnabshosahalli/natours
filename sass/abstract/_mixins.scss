@@ -1,0 +1,37 @@
+// ----------------- media query mixin ------------------------
+/*
+* phone -- below 600px
+* tablet-port -- 600 - 900px
+* tablet-land -- 900 - 1200px
+* desktop -- 1200 - 1800px
+* big screen -- 1800 and above
+*/
+@mixin respond($device){
+    // tablet in portrait mode
+    @if $device == tablet-port {
+        @media only screen and (min-width: 37.5em) {
+            @content;
+        }
+    }
+
+    // tablet in landscape mode
+    @if $device == tablet-land {
+        @media only screen and (min-width: 56.25em) {
+            @content;
+        }
+    }
+
+    // desktop
+    @if $device == desktop {
+        @media only screen and (min-width: 75em) {
+            @content;
+        }
+    }
+
+    // big screen
+    @if $device == big-screen {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+}
