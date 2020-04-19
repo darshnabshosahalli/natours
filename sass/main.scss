@@ -1,8 +1,8 @@
 // abstract partial imports
-@import "abstract/extends";
 @import "abstract/functions";
 @import "abstract/mixins";
 @import "abstract/variables";
+@import "abstract/extends";
 
 // Base partial imports
 @import "base/animation";
@@ -11,4 +11,8 @@
 @import "base/utility";
 
 // Page partial imports
-@import "page/homepage"
+@import "page/homepage";
+
+// Component partial imports
+@import "components/button";
+@import "components/_h2component";
