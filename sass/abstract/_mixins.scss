@@ -1,0 +1,47 @@
+// --------------------- linear gradinet -------------------------
+@mixin linearGradientImg($color1,$color2,$img) {
+
+    @if $img == '' {
+        background: linear-gradient(to right bottom, $color1, $color2);
+    }
+    @else {
+        background: linear-gradient(to right bottom, $color1, $color2), url(#{$img}) center/cover no-repeat;
+    }
+} 
+
+// --------------------- media query mixins ----------------------
+/*
+* 0 - 600px - mobile phones
+* 600 - 900px - tablet portrait
+* 900 - 1200px - tablet landscape
+* 1200 - 1800px - desktop
+* 1800 - above - big screen
+*/
+@mixin respond($device) {
+
+    @if $device == tablet-phone {
+
+        @media only screen and (min-width: 37.5em) {
+            @content;
+        }
+    }
+
+    @if $device == tablet-landscape {
+        @media only screen and (min-width: 56.25em) {
+            @content;
+        }
+    }
+
+    @if $device == desktop {
+        @media only screen and (min-width: 75em) {
+            @content;
+        }
+    }
+
+    @if $device == big-screen {
+        @media only screen and (min-width: 112.5em) {
+            @content;
+        }
+    }
+
+}

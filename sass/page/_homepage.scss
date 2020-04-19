@@ -1,0 +1,19 @@
+// ------------------- header ----------------------------
+.header {
+    @include linearGradientImg(rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8),'../img/hero-small.jpg');
+    height: 100vh;
+
+    @include respond(tablet-landscape) {
+        @include linearGradientImg(rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8),'../img/hero.jpg');
+        height: 95vh;
+    }
+}
+// ------------------- about us --------------------------
+
+// ------------------- features --------------------------
+
+// ------------------- tours -----------------------------
+
+// ------------------- booking ---------------------------
+
+// ------------------- footer ----------------------------

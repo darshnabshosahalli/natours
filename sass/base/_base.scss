@@ -7,3 +7,32 @@
     margin: 0;
     padding: 0;
 }
+
+// -------------------- html font size set ----------------
+html {
+    font-size: 62.5%;
+}
+
+// -------------------- margin padding ------------------
+body {
+    font-family: 'Lato', sans-serif;
+    @include respond(tablet-landscape) {
+        margin: 3rem;
+    }
+
+}
+
+// -------------------- list reset ----------------------
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+// -------------------- anchor reset ----------------------
+a:visited,
+a:hover,
+a:active,
+a:link {
+    text-decoration: none;
+    color: $color-grey-dark;
+}
