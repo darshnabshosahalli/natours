@@ -5,7 +5,15 @@
 * 1200 - 1800px - desktop
 * 1800 - above - big screen
 */
-.heading-secondary {
+.heading-secondary, .btn, .tours__text {
+  text-transform: uppercase; }
+
+.btn {
+  margin: 0 auto; }
+
+.card__heading {
+  font-size: 1.6rem;
+  font-weight: 700;
   text-transform: uppercase; }
 
 *,
@@ -19,7 +27,8 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Lato', sans-serif; }
+  font-family: 'Lato', sans-serif;
+  color: #777; }
   @media only screen and (min-width: 56.25em) {
     body {
       margin: 3rem; } }
@@ -51,6 +60,21 @@ a:link {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 1rem rgba(119, 119, 119, 0.2); }
 
+.color-green {
+  background: linear-gradient(to right bottom, #7ed56f, #28b485); }
+
+.color-orange {
+  background: linear-gradient(to right bottom, #ffb900, #ff7730); }
+
+.color-blue {
+  background: linear-gradient(to right bottom, #2998ff, #5643fa); }
+
+.margin-bottom-large {
+  margin-bottom: 8rem; }
+
+.margin-bottom-small {
+  margin-bottom: 2rem; }
+
 .header {
   background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg) center/cover no-repeat;
   height: 100vh; }
@@ -58,3 +82,140 @@ a:link {
     .header {
       background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg) center/cover no-repeat;
       height: 95vh; } }
+
+.btn {
+  color: currentColor;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  font-size: 1.6rem; }
+  .btn.btn--white {
+    background-color: #fff; }
+  .btn.btn--green {
+    background-color: #55c57a; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.card {
+  flex: 0 0 24rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2.5rem;
+  height: 30rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  text-align: center; }
+  .card__icon {
+    background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8));
+    font-size: 6rem; }
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+      .card__icon {
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent; } }
+  .card:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.tours {
+  height: 52rem;
+  width: 34rem;
+  -moz-perspective: 150rem;
+  perspective: 200rem;
+  position: relative; }
+  .tours--front {
+    width: 34rem;
+    height: inherit;
+    transition: all 1s;
+    position: absolute;
+    top: 0;
+    border-radius: 3px;
+    box-shadow: 0 0rem 3rem rgba(119, 119, 119, 0.2);
+    display: flex;
+    flex-direction: column; }
+  .tours__image {
+    align-self: flex-start;
+    height: 40%;
+    width: 100%;
+    border-radius: 3px; }
+    @supports (background-blend-mode: screen) {
+      .tours__image {
+        background-blend-mode: screen; } }
+    @supports (clip-path: polygon(0 0)) {
+      .tours__image {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); } }
+    .tours__image--sea {
+      background: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg) center/cover no-repeat; }
+    .tours__image--forest {
+      background: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg) center/cover no-repeat; }
+    .tours__image--mountain {
+      background: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg) center/cover no-repeat; }
+  .tours__heading {
+    display: inline-block;
+    position: absolute;
+    top: 25%;
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    left: 18%;
+    margin-right: 3rem; }
+    .tours__heading--text {
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
+      color: #fff;
+      line-height: 4rem; }
+    .tours__heading--orange {
+      background: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
+    .tours__heading--green {
+      background: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+    .tours__heading--blue {
+      background: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+  .tours__desc {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60%; }
+    .tours__desc > * {
+      font-size: 1.5rem;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+      width: 65%;
+      text-align: center; }
+  .tours--back {
+    width: 34rem;
+    height: inherit;
+    transition: all 1s;
+    transform: rotateY(180deg);
+    position: absolute;
+    backface-visibility: hidden;
+    top: 0;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0rem 3rem rgba(119, 119, 119, 0.2); }
+  @media (hover: hover) {
+    .tours:hover .tours--front {
+      transform: rotateY(-180deg); } }
+  @media (hover: hover) {
+    .tours:hover .tours--back {
+      transform: rotateY(0); } }
+  .tours__text {
+    color: #fff;
+    font-size: 1.4rem; }
+  .tours__price {
+    font-size: 6rem;
+    font-weight: 100;
+    color: #fff; }

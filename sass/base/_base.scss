@@ -16,10 +16,10 @@ html {
 // -------------------- margin padding ------------------
 body {
     font-family: 'Lato', sans-serif;
+    color: $color-grey-dark;
     @include respond(tablet-landscape) {
         margin: 3rem;
     }
-
 }
 
 // -------------------- list reset ----------------------

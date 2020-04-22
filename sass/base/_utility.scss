@@ -1,0 +1,19 @@
+.color-green {
+    @include linearGradientImg($color-primary-light,$color-primary-dark,'');
+}
+
+.color-orange {
+    @include linearGradientImg($color-secondary-light,$color-secondary-dark,'');
+}
+
+.color-blue {
+    @include linearGradientImg($color-tertiary-light,$color-tertiary-dark,'');
+}
+
+.margin-bottom-large {
+    margin-bottom: 8rem;
+}
+
+.margin-bottom-small {
+    margin-bottom: 2rem;
+}

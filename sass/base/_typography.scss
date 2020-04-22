@@ -1,3 +1,4 @@
+// ---------------------------------------- h2 component ------------------------------------------
 .heading-secondary {
     @extend %uppercase;
     @include linearGradientImg(rgba($color-primary-light,0.8),rgba($color-primary-dark,0.8),'');
