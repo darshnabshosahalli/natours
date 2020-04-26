@@ -130,7 +130,8 @@ a:link {
   width: 34rem;
   -moz-perspective: 150rem;
   perspective: 200rem;
-  position: relative; }
+  position: relative;
+  margin-bottom: 15rem; }
   .tours--front {
     width: 34rem;
     height: inherit;
@@ -192,30 +193,81 @@ a:link {
       border-bottom: 1px solid #eee;
       width: 65%;
       text-align: center; }
-  .tours--back {
-    width: 34rem;
-    height: inherit;
-    transition: all 1s;
-    transform: rotateY(180deg);
-    position: absolute;
-    backface-visibility: hidden;
-    top: 0;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0rem 3rem rgba(119, 119, 119, 0.2); }
   @media (hover: hover) {
     .tours:hover .tours--front {
-      transform: rotateY(-180deg); } }
-  @media (hover: hover) {
+      transform: rotateY(-180deg); }
     .tours:hover .tours--back {
-      transform: rotateY(0); } }
+      transform: rotateY(0); }
+    .tours--back {
+      width: 34rem;
+      height: inherit;
+      transition: all 1s;
+      transform: rotateY(180deg);
+      position: absolute;
+      backface-visibility: hidden;
+      top: 0;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0rem 3rem rgba(119, 119, 119, 0.2); } }
+  @media (hover: none) {
+    .tours {
+      height: 65rem; }
+    .tours__desc {
+      justify-content: flex-start;
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%; }
+    .tours--back {
+      width: 34rem;
+      display: flex;
+      width: 34rem;
+      position: absolute;
+      top: 75%;
+      flex-direction: column;
+      height: 35%;
+      justify-content: space-evenly;
+      align-items: center; }
+      @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        .tours--back {
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+          -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); } }
+    .tours--back > * {
+      margin-bottom: 0; } }
   .tours__text {
     color: #fff;
     font-size: 1.4rem; }
   .tours__price {
     font-size: 6rem;
     font-weight: 100;
+    color: #fff; }
+  @media only screen and (min-width: 112.5em) {
+    .tours, .tours--front, .tours--back {
+      width: 45rem;
+      font-size: 3rem; }
+    .tours__heading {
+      font-size: 3rem; }
+    .tours__desc > * {
+      font-size: 2rem; } }
+
+.secondary-btn {
+  display: inline-block;
+  padding: 1rem; }
+  .secondary-btn:link, .secondary-btn:visited {
+    font-size: 1.6rem;
+    color: #55c57a;
+    border-bottom: 1px solid #55c57a; }
+  .secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    background-color: #55c57a;
+    color: #fff; }
+  .secondary-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    background-color: #55c57a;
     color: #fff; }

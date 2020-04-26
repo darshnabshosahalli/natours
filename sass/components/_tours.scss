@@ -5,6 +5,7 @@
     -moz-perspective: 150rem;
     perspective: 200rem;
     position: relative;
+    margin-bottom: 15rem;
 
     // ------------------------ tours card front ------------
     &--front {
@@ -98,34 +99,66 @@
     }
 
     // ----------------------------- tours card back ---------------
-    &--back {
-        width: 34rem;
-        height: inherit;
-        transition: all 1s;
-        transform: rotateY(180deg);
-        position: absolute;
-        backface-visibility: hidden;
-        top: 0;
-        border-radius: 3px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 0rem 3rem rgba($color-grey-dark,0.2);
-    }
 
-    &:hover &--front {
-        @media (hover:hover) {
+    @media(hover:hover) {
+        &:hover &--front {
             transform: rotateY(-180deg);
         }
-    }
-
-    &:hover &--back {
-        @media (hover:hover) {
+    
+        &:hover &--back {
             transform: rotateY(0);
+        }
+
+        &--back {
+            width: 34rem;
+            height: inherit;
+            transition: all 1s;
+            transform: rotateY(180deg);
+            position: absolute;
+            backface-visibility: hidden;
+            top: 0;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0rem 3rem rgba($color-grey-dark,0.2);
         }
     }
 
+    @media(hover:none) {
+
+        & {
+            height: 65rem;
+        }
+
+        &__desc {
+            justify-content: flex-start;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        &--back {
+            width: 34rem;
+            display: flex;
+            width: 34rem;
+            position: absolute;
+            top: 75%;
+            flex-direction: column;
+            height: 35%;
+            justify-content: space-evenly;
+            align-items: center;
+            @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+                clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+                -webkit-clip-path: polygon(0 15%,100% 0,100% 100%,0 100%);
+            }
+        }
+        &--back > * {
+            margin-bottom: 0;
+        }
+    }
     &__text {
         color: $color-white;
         @extend %uppercase;
@@ -138,4 +171,19 @@
         color: $color-white;
     }
 
+    //media query for 1800px breakpoint
+    @include respond(big-screen){
+        &,&--front,&--back {
+            width: 45rem;
+            font-size: 3rem;
+        }
+
+        &__heading {
+            font-size: 3rem;
+        }
+
+        &__desc > * {
+            font-size: 2rem;
+        }
+    }
 } 
